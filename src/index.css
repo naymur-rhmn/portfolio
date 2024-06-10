@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-white font-Inter bg-bg1;
+  }
+}
+
+/* nav menu */
+.hover-underline-animation {
+  /* display: inline-block; */
+  position: relative;
+  cursor: pointer;
+  padding: 3px 0;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 3px;
+  bottom: -1px;
+  left: 0;
+  background-color: #12f7d6;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* navbar menu icon */
+span.bar {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #fcfefe;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+span.bar-1 {
+  top: 4px;
+}
+span.bar-2,
+span.bar-3 {
+  top: 12px;
+}
+span.bar-4 {
+  bottom: 5px;
+}
+.active span.bar-1 {
+  top: 12px;
+  width: 0%;
+  left: 50%;
+}
+.active span.bar-4 {
+  top: 12px;
+  width: 0%;
+  left: 50%;
+}
+.active span.bar-2 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+.active span.bar-3 {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* contact section */
+/* textarea.custom-input::placeholder {
+  padding-top: 20px;
+} */
+
+/* project section */
+.demo-img-bg {
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 0 0;
+}

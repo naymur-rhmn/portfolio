@@ -1,0 +1,134 @@
+import { useState } from "react";
+import SectionTitle from "./SectionTitle";
+
+const About = () => {
+  const [tabs, setTabs] = useState(1);
+
+  const handleTab = (index) => {
+    setTabs(index);
+  };
+
+  const skills = [
+    "Javascript",
+    "React.js",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Html",
+    "CSS",
+    "TailwindCSS",
+    "Bootstrap",
+    "MaterialUi",
+    "Google Firebase",
+    "Git",
+  ];
+
+  return (
+    <section id="about" className="bg-bg2">
+      <div className="max-w-screen-xl mx-auto px-8  py-16  min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)] flex items-center">
+        <div className="">
+          <SectionTitle title={"About me"} subtitle={""} />
+          <div className="grid grid-cols-12 gap-6 md:gap-12 mt-12 lg:mt-20">
+            <div className="col-span-12 md:col-span-6 text-gray-100  pr-5">
+              <h2 className="text-2xl lg:text-3xl mb-6 font-semibold tracking-wide ">
+                This is Naymur Rahman
+              </h2>
+              <div>
+                {/* tabs */}
+                <div>
+                  <ul className="flex gap-8">
+                    <li
+                      onClick={() => handleTab(1)}
+                      className={`text-lg lg:text-xl font-medium hover:text-brand1 cursor-pointer transition-all ${
+                        tabs === 1 ? "text-brand1" : "text-gray-400"
+                      }`}
+                    >
+                      My Story
+                    </li>
+                    <li
+                      onClick={() => handleTab(2)}
+                      className={`text-lg lg:text-xl font-medium hover:text-brand1 cursor-pointer transition-all ${
+                        tabs === 2 ? "text-brand1" : "text-gray-400"
+                      }`}
+                    >
+                      Experience
+                    </li>
+                    <li
+                      onClick={() => handleTab(3)}
+                      className={`text-lg lg:text-xl font-medium hover:text-brand1 cursor-pointer transition-all ${
+                        tabs === 3 ? "text-brand1" : "text-gray-400"
+                      }`}
+                    >
+                      Education
+                    </li>
+                  </ul>
+                </div>
+                {/* tab content */}
+                <div className="mt-6 min-h-[230px] pr-10">
+                  {/* story */}
+                  <div className={tabs === 1 ? "block" : "hidden"}>
+                    <p className=" mb-3 font-normal">
+                      A Web developer proficient in JavaScript and the web. I'm
+                      passionate about web performance, accessibility,
+                      mentoring, user & developer experience.
+                    </p>
+                    <p className=" mb-3 font-normal">
+                      I follow a digital minimalism mindset, using technology to
+                      improve people's lives and provide value for businesses.
+                    </p>
+                    <p className=" mb-3 font-normal">
+                      In my free time, I build side projects and like exploring
+                      new technologies. You can see some of my work in the
+                      projects section below.
+                    </p>
+                  </div>
+                  {/* experience */}
+                  <div className={tabs === 2 ? "block" : "hidden"}>
+                    <p className=" mb-3 font-normal">
+                      During my experiences, I participated in several
+                      bootcamps. These events were intensive periods of one to
+                      two weeks during which we had to develop a project meeting
+                      the requirements of the client.
+                    </p>
+                    <p className=" mb-3 font-normal">
+                      As a self-taught person, I worked hard to improve my
+                      skills and become more independent. I focused on
+                      developing my programming and design skills to be more
+                      efficient
+                    </p>
+                  </div>
+                  {/* education */}
+                  <div className={tabs === 3 ? "block" : "hidden"}>
+                    <p className=" mb-3 font-normal">
+                      This year I completed my bachelor of Science final exam.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* skills */}
+            <div className="col-span-12 md:col-span-6">
+              <h2 className="text-2xl lg:text-3xl mb-6 font-semibold tracking-wide ">
+                My Skills
+              </h2>
+              <ul className="flex gap-4 flex-wrap">
+                {skills?.map((skill, index) => {
+                  return (
+                    <li
+                      key={index}
+                      className="bg-[#b0afaf] shadow text-bg1 text-lg md:text-xl px-4 py-2.5 rounded font-medium"
+                    >
+                      {skill}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
