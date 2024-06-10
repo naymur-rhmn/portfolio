@@ -38,7 +38,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-bg2">
+    <section name="contact" className="bg-bg1">
       <div className="max-w-screen-xl flex items-center justify-center min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)] mx-auto px-10 md:px-32  py-16 md:py-32">
         <div className="w-full">
           <div>

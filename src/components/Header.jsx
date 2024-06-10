@@ -3,6 +3,12 @@ import { Link } from "react-scroll";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
+  const [menuToggle, setMenuToggle] = useState(0);
+
+  const handleMenuToggle = (index) => {
+    setMenuToggle(index);
+  };
+
   const handleClick = () => {
     setToggle((prev) => !prev);
   };
@@ -12,66 +18,86 @@ const Header = () => {
         <div className="max-w-screen-2xl mx-auto  z-50 h-[68px] md:h-[78px]  px-4 md:px-8 text-white ">
           <div className="flex items-center justify-between h-full gap-[5rem]">
             {/* logo */}
-            <div className="z-50">
-              <span className="font-ibm text-[26px] text-brand1">naymur</span>
-            </div>
+            <Link
+              to="home"
+              smooth={true}
+              offset={-77}
+              duration={500}
+              onClick={() => handleMenuToggle(0)}
+            >
+              <div className="z-50 cursor-pointer">
+                <span className="font-ibm text-[26px] text-brand1">naymur</span>
+              </div>
+            </Link>
+
             {/* nav */}
             <nav className="hidden md:block">
               <ul className="flex gap-6">
                 <Link
-                  to="hero"
-                  spy={true}
+                  to="home"
+                  activeClass="menu-active"
                   smooth={true}
-                  hashSpy={true}
                   offset={-77}
                   duration={500}
+                  className={`hover-underline-animation ${
+                    menuToggle === 0 ? "menu-active" : ""
+                  }`}
+                  onClick={() => handleMenuToggle(0)}
                 >
-                  <li className="hover-underline-animation">Home</li>
+                  Home
                 </Link>
                 <Link
                   to="about"
-                  spy={true}
                   smooth={true}
-                  hashSpy={true}
                   offset={-75}
                   duration={500}
+                  className={`hover-underline-animation ${
+                    menuToggle === 1 ? "menu-active" : ""
+                  }`}
+                  onClick={() => handleMenuToggle(1)}
                 >
-                  <li className="hover-underline-animation">About</li>
+                  About
                 </Link>
                 <Link
                   to="projects"
-                  spy={true}
                   smooth={true}
-                  hashSpy={true}
-                  offset={-72}
+                  offset={-69}
                   duration={500}
+                  className={`hover-underline-animation ${
+                    menuToggle === 2 ? "menu-active" : ""
+                  }`}
+                  onClick={() => handleMenuToggle(2)}
                 >
-                  <li className="hover-underline-animation">Projects</li>
+                  Projects
                 </Link>
                 <Link
                   to="blogs"
-                  spy={true}
                   smooth={true}
-                  hashSpy={true}
-                  offset={0}
+                  offset={-60}
                   duration={500}
+                  className={`hover-underline-animation ${
+                    menuToggle === 3 ? "menu-active" : ""
+                  }`}
+                  onClick={() => handleMenuToggle(3)}
                 >
-                  <li className="hover-underline-animation">Blogs</li>
+                  Blogs
                 </Link>
                 <Link
                   to="contact"
-                  spy={true}
                   smooth={true}
-                  hashSpy={true}
-                  offset={-72}
+                  offset={-30}
                   duration={500}
+                  className={`hover-underline-animation ${
+                    menuToggle === 4 ? "menu-active" : ""
+                  }`}
+                  onClick={() => handleMenuToggle(4)}
                 >
-                  <li className="hover-underline-animation">Contact</li>
+                  Contact
                 </Link>
               </ul>
             </nav>
             {/* button */}
-            <button class="hidden md:block py-2.5 shadow-md px-5 text-base font-medium text-white bg-[#2d3645] border border-brand1  rounded-md hover:bg-opacity-60 tracking-wide">
+            <button class="hidden md:block py-2.5 shadow-md px-5 text-sm font-medium text-white bg-[#2d3645] border border-brand1  rounded-md hover:bg-opacity-60 tracking-wide">
               Resume
             </button>
             {/* mobile menu*/}
@@ -144,10 +170,8 @@ const Header = () => {
               </Link>
               <Link
                 to="blogs"
-                spy={true}
                 smooth={true}
-                hashSpy={true}
-                offset={0}
+                offset={-40}
                 duration={500}
                 onClick={handleClick}
               >

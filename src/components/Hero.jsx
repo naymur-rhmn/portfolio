@@ -1,6 +1,9 @@
+import { Link } from "react-scroll";
+import naymur from "../assets/img/nr-profile.png";
+
 const Hero = () => {
   return (
-    <section id="hero" className="bg-bg1">
+    <section name="home" className="bg-bg1">
       <div className="max-w-screen-xl mx-auto px-8  py-16 flex flex-col md:items-center  md:flex-row gap-8 min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)]">
         <div className="md:w-3/5 flex flex-col gap-8">
           <div className="flex flex-col gap-1">
@@ -20,25 +23,30 @@ const Hero = () => {
           </p>
 
           <div className="flex gap-4">
-            <button
-              type="button"
-              class="text-white bg-[#2d3645] border border-[#55666e] hover:bg-[#374151]  font-medium rounded-full text-sm lg:px-7 px-5 py-2.5 lg:py-4"
-            >
-              Download Resume
-            </button>
-            <button
-              type="button"
-              class="text-white bg-[#2d3645] border border-[#55666e] hover:bg-[#374151]  font-medium rounded-full text-sm lg:px-7 px-5 py-2.5 lg:py-4"
-            >
-              Check Projects
-            </button>
+            <Link to="contact" smooth={true} offset={-60} duration={500}>
+              <button
+                type="button"
+                class="text-white bg-[#2d3645] border border-[#55666e] hover:bg-[#374151]  font-medium rounded-full text-sm lg:px-7 px-5 py-2.5 lg:py-4"
+              >
+                Contact with me
+              </button>
+            </Link>
+
+            <Link to="projects" smooth={true} offset={-60} duration={500}>
+              <button
+                type="button"
+                class="text-white bg-[#2d3645] border border-[#55666e] hover:bg-[#374151]  font-medium rounded-full text-sm lg:px-7 px-5 py-2.5 lg:py-4"
+              >
+                Check Projects
+              </button>
+            </Link>
           </div>
         </div>
         {/*     md:w-[370px] */}
         <div className="md:w-2/5 flex items-center">
           <img
-            className=" h-[400px] w-[370px] rounded-xl shadow"
-            src="https://assets-global.website-files.com/5fd908fb4e19797598a2f9ed/5fd923e456b71f08e5899b2e_image-home-hero-portfolio-x-template-p-500.jpeg"
+            className=" h-[400px] w-[370px] rounded-xl"
+            src={naymur}
             alt=""
           />
         </div>

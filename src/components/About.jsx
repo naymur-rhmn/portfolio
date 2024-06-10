@@ -24,7 +24,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="bg-bg2">
+    <section name="about" className="bg-bg2">
       <div className="max-w-screen-xl mx-auto px-8  py-16  min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)] flex items-center">
         <div className="">
           <SectionTitle title={"About me"} subtitle={""} />
@@ -64,37 +64,43 @@ const About = () => {
                   </ul>
                 </div>
                 {/* tab content */}
-                <div className="mt-6 min-h-[230px] pr-10">
+                <div className="mt-6 min-h-[300px] pr-10">
                   {/* story */}
                   <div className={tabs === 1 ? "block" : "hidden"}>
                     <p className=" mb-3 font-normal">
-                      A Web developer proficient in JavaScript and the web. I'm
-                      passionate about web performance, accessibility,
-                      mentoring, user & developer experience.
+                      I have always been fascinated by technology.This passion
+                      for technology eventually led me to the world of web
+                      development, where I could merge creativity with
+                      functionality, and build things that could be accessed and
+                      appreciated by anyone, anywhere.
                     </p>
                     <p className=" mb-3 font-normal">
-                      I follow a digital minimalism mindset, using technology to
-                      improve people's lives and provide value for businesses.
+                      Embarking on this journey, I committed myself to at least
+                      two years of intensive learning and practice. I started
+                      with the basics of HTML, CSS, and JavaScript, laying a
+                      solid foundation before moving on to more complex topics.
+                      Learning React was a particularly exciting milestone.
                     </p>
                     <p className=" mb-3 font-normal">
-                      In my free time, I build side projects and like exploring
-                      new technologies. You can see some of my work in the
-                      projects section below.
+                      Throughout this journey, I have prided myself on being
+                      responsible and dedicated.
                     </p>
                   </div>
                   {/* experience */}
                   <div className={tabs === 2 ? "block" : "hidden"}>
                     <p className=" mb-3 font-normal">
-                      During my experiences, I participated in several
-                      bootcamps. These events were intensive periods of one to
-                      two weeks during which we had to develop a project meeting
-                      the requirements of the client.
+                      To solidify my knowledge, I started building projects.
+                      From simple landing pages to complex applications with
+                      dynamic content and user authentication, each project was
+                      a testament to my growing skills.
                     </p>
-                    <p className=" mb-3 font-normal">
-                      As a self-taught person, I worked hard to improve my
-                      skills and become more independent. I focused on
-                      developing my programming and design skills to be more
-                      efficient
+                    <p>
+                      When I stacked on any problem, I tried to find solution on
+                      web and also seeking feedback from the community further
+                      enhanced my learning experience. These projects not only
+                      improved my technical skills but also taught me the
+                      importance of clean code, user experience, and efficient
+                      problem-solving.
                     </p>
                   </div>
                   {/* education */}

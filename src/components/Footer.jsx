@@ -13,17 +13,29 @@ const Footer = () => {
         <div>
           <ul className="flex gap-4">
             <li>
-              <a className="group" href="#">
+              <a
+                className="group"
+                href="https://github.com/naymur-rhmn"
+                target="_blank"
+              >
                 <IoLogoGithub className="group-hover:text-brand1" size={18} />
               </a>
             </li>
             <li>
-              <a className="group" href="#">
+              <a
+                className="group"
+                href="https://www.linkedin.com/in/naymur-mn"
+                target="_blank"
+              >
                 <IoLogoLinkedin className="group-hover:text-brand1" size={18} />
               </a>
             </li>
             <li>
-              <a className="group" href="#">
+              <a
+                className="group"
+                href="https://www.facebook.com/naymurmn"
+                target="_blank"
+              >
                 <IoLogoFacebook className="group-hover:text-brand1" size={18} />
               </a>
             </li>
