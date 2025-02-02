@@ -4,25 +4,20 @@ export default {
   theme: {
     fontFamily: {
       ibm: '"IBM Plex Mono", monospace',
-      ubuntu: "Ubuntu, sans-serif",
       Inter: "Inter, sans-serif",
+      ZenTokyo: '"Zen Tokyo Zoo", serif',
+      Lancelot: "Lancelot, serif",
     },
-    // container: {
-    //   padding: {
-    //     DEFAULT: "1rem",
-    //     sm: "2rem",
-    //     lg: "4rem",
-    //     xl: "5rem",
-    //     "2xl": "6rem",
-    //   },
-    // },
     extend: {
       colors: {
         bg1: "#292F36",
         bg2: "#21272f",
         brand1: "#12F7D6",
         brand2: "#98FAEC",
+        brand3: "#11C175",
         grey: "#43454D",
+        dbBg1: "#1C1D21",
+        dbBg2: "#030303",
       },
     },
   },

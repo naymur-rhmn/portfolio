@@ -1,5 +1,5 @@
 import { Link } from "react-scroll";
-import naymur from "../assets/img/nr-profile.png";
+import naymur from "../../assets/img/nr-profile.png";
 
 const Hero = () => {
   return (

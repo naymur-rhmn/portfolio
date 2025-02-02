@@ -1,8 +1,8 @@
 import SectionTitle from "./SectionTitle";
-import project1 from "../assets/img/project-1.png";
-import project2 from "../assets/img/project-2.jpg";
-import restaurant from "../assets/img/restaurant.png";
-import nourish from "../assets/img/nourish-organic.png";
+import project1 from "../../assets/img/project-1.png";
+import project2 from "../../assets/img/project-2.jpg";
+import restaurant from "../../assets/img/restaurant.png";
+import nourish from "../../assets/img/nourish-organic.png";
 import SingleProject from "./SingleProject";
 
 const Projects = () => {

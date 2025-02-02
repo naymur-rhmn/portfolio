@@ -1,16 +1,16 @@
 import { Toaster } from "react-hot-toast";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import Blog from "./components/Blog";
+import About from "./components/Home/About";
+import Contact from "./components/Home/Contact";
+import Footer from "./components/Home/Footer";
+import Header from "./components/Home/Header";
+import Hero from "./components/Home/Hero";
+import Projects from "./components/Home/Projects";
+import Blog from "./components/Home/Blog";
 
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header />
       <Hero />
       <About />
       <Projects />
@@ -19,7 +19,8 @@ function App() {
       <Footer />
       <div>
         <Toaster />
-      </div>
+      </div> */}
+      {/* <Dashboard /> */}
     </>
   );
 }

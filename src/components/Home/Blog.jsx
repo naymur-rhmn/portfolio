@@ -1,7 +1,7 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
-import blogImg1 from "../assets/img/time-management.webp";
-import blogImg2 from "../assets/img/What-Is-JavaScript-Used-For.avif";
+import blogImg1 from "../../assets/img/time-management.webp";
+import blogImg2 from "../../assets/img/What-Is-JavaScript-Used-For.avif";
 import SingleBlog from "./SingleBlog";
 
 const Blog = () => {
