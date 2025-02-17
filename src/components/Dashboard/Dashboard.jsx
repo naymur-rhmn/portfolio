@@ -1,6 +1,6 @@
-import AllBlogs from "./AllBlogs";
-import AllProjects from "./AllProjects";
-import SkillList from "./SkillList";
+import AllProjects from "./MyProjects/AllProjects";
+import AllBlogs from "./MyBlogs/AllBlogs";
+import SkillList from "./Skills/SkillList";
 
 const Dashboard = () => {
   return (

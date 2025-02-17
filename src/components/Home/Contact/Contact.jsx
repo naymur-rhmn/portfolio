@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 //emailjs
 import emailjs from "@emailjs/browser";
-import SectionTitle from "./SectionTitle";
+import SectionTitle from "../SectionTitle/SectionTitle";
 import toast from "react-hot-toast";
 
 const Contact = () => {

@@ -5,11 +5,11 @@ import "./index.css";
 import Home from "./pages/Home.jsx";
 import DashboardLayout from "./pages/DashboardLayout.jsx";
 import Dashboard from "./components/Dashboard/Dashboard.jsx";
-import AddProject from "./components/Dashboard/AddProject.jsx";
-import AddBlog from "./components/Dashboard/AddBlog.jsx";
-import UpdateSkills from "./components/Dashboard/UpdateSkills.jsx";
-import ContentUpdate from "./components/Dashboard/ContentUpdate.jsx";
-import ResumeUpdate from "./components/Dashboard/ResumeUpdate.jsx";
+import AddProject from "./components/Dashboard/MyProjects/AddProject.jsx";
+import AddBlog from "./components/Dashboard/MyBlogs/AddBlog.jsx";
+import UpdateSkills from "./components/Dashboard/Skills/UpdateSkills.jsx";
+import ContentUpdate from "./components/Dashboard/Contents/ContentUpdate.jsx";
+import ResumeUpdate from "./components/Dashboard/Resume/ResumeUpdate.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>

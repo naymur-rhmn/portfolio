@@ -46,18 +46,7 @@ const Header = () => {
                 >
                   Home
                 </Link>
-                <Link
-                  to="about"
-                  smooth={true}
-                  offset={-75}
-                  duration={500}
-                  className={`hover-underline-animation ${
-                    menuToggle === 1 ? "menu-active" : ""
-                  }`}
-                  onClick={() => handleMenuToggle(1)}
-                >
-                  About
-                </Link>
+
                 <Link
                   to="projects"
                   smooth={true}
@@ -69,6 +58,18 @@ const Header = () => {
                   onClick={() => handleMenuToggle(2)}
                 >
                   Projects
+                </Link>
+                <Link
+                  to="about"
+                  smooth={true}
+                  offset={-75}
+                  duration={500}
+                  className={`hover-underline-animation ${
+                    menuToggle === 1 ? "menu-active" : ""
+                  }`}
+                  onClick={() => handleMenuToggle(1)}
+                >
+                  About Me
                 </Link>
                 <Link
                   to="blogs"
@@ -97,7 +98,7 @@ const Header = () => {
               </ul>
             </nav>
             {/* button */}
-            <button class="hidden md:block py-2.5 shadow-md px-5 text-sm font-medium text-white bg-[#2d3645] border border-brand1  rounded-md hover:bg-opacity-60 tracking-wide">
+            <button className="hidden md:block py-2.5 shadow-md px-5 text-sm font-medium text-white bg-[#2d3645] border border-brand1  rounded-md hover:bg-opacity-60 tracking-wide">
               Resume
             </button>
             {/* mobile menu*/}
@@ -193,7 +194,6 @@ const Header = () => {
             </ul>
           </nav>
         </div>
-        {/* <div className="bottom-0 absolute w-full h-[1px] mr-4 bg-grey"></div> */}
       </div>
     </header>
   );
