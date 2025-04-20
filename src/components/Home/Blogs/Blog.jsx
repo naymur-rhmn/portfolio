@@ -1,7 +1,8 @@
-import blogImg1 from "../../../assets/img/time-management.webp";
-import blogImg2 from "../../../assets/img/What-Is-JavaScript-Used-For.avif";
+import { Element } from "react-scroll";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import SingleBlog from "./SingleBlog";
+import blogImg1 from "../../../assets/img/time-management.webp";
+import blogImg2 from "../../../assets/img/What-Is-JavaScript-Used-For.avif";
 
 const Blog = () => {
   const blogs = [
@@ -26,18 +27,20 @@ const Blog = () => {
     },
   ];
   return (
-    <section name="blogs" className="bg-bg2">
-      <div className="max-w-screen-xl mx-auto px-8  py-16 flex flex-col md:items-center  md:flex-row min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)]">
-        <div className="w-full">
-          <SectionTitle title="Recent Blogs" />
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-14 md:mt-20 ">
-            {blogs.map((blog) => (
-              <SingleBlog key={blog.id} blog={blog}></SingleBlog>
-            ))}
+    <Element name="blogs" className="section">
+      <section className="bg-bg2">
+        <div className="max-w-screen-xl mx-auto px-8  py-16 flex flex-col md:items-center  md:flex-row min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)]">
+          <div className="w-full">
+            <SectionTitle title="Recent Blogs" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-14 md:mt-20 ">
+              {blogs.map((blog) => (
+                <SingleBlog key={blog.id} blog={blog}></SingleBlog>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Element>
   );
 };
 

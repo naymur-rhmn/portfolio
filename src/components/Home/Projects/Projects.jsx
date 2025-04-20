@@ -1,13 +1,15 @@
+import { useRef, useState } from "react";
+import { Element } from "react-scroll";
+import { motion, useScroll } from "framer-motion";
 import SectionTitle from "../SectionTitle/SectionTitle";
 // import project1 from "../../assets/img/project-1.png";
 // import project2 from "../../assets/img/project-2.jpg";
+import SingleProject from "./SingleProject";
 import restaurant from "../../../assets/img/restaurant.png";
 import nourish from "../../../assets/img/nourish-organic.png";
-import SingleProject from "./SingleProject";
-import { motion, useScroll } from "framer-motion";
-import { useRef, useEffect } from "react";
 
 const Projects = () => {
+  const [activeId, setActiveId] = useState(null);
   const projects = [
     {
       id: 1,
@@ -189,32 +191,36 @@ const Projects = () => {
   });
 
   return (
-    <section name="projects" className="bg-bg1">
-      <div className="max-w-screen-xl mx-auto px-8 py-14 md:py-20  min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)] h-full">
-        <SectionTitle title="Projects" subtitle="A Showcase of My Work" />
-        <div className="flex items-center w-full relative">
-          <div
-            ref={container}
-            className="mt-14 md:mt-20 flex flex-col gap-10 relative"
-          >
-            {projects.map((project, i) => {
-              const targetScale = 1 - (projects.length - i) * 0.05;
+    <Element name="projects" className="section">
+      <section className="bg-bg1">
+        <div className="max-w-screen-xl mx-auto px-8 py-14 md:py-20  min-h-[calc(100vh-68px)] md:min-h-[calc(100vh-78px)] h-full">
+          <SectionTitle title="Projects" subtitle="A Showcase of My Work" />
+          <div className="flex items-center w-full relative">
+            <div
+              ref={container}
+              className="mt-14 md:mt-20 flex flex-col gap-10 relative"
+            >
+              {projects.map((project, i) => {
+                const targetScale = 1 - (projects.length - i) * 0.05;
 
-              return (
-                <SingleProject
-                  key={project.id}
-                  index={i}
-                  project={project}
-                  range={[i * 0.05, 1]}
-                  targetScale={targetScale}
-                  progress={scrollYProgress}
-                ></SingleProject>
-              );
-            })}
+                return (
+                  <SingleProject
+                    key={project.id}
+                    index={i}
+                    project={project}
+                    range={[i * 0.05, 1]}
+                    targetScale={targetScale}
+                    progress={scrollYProgress}
+                    activeId={activeId}
+                    setActiveId={setActiveId}
+                  ></SingleProject>
+                );
+              })}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </Element>
   );
 };
 

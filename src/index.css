@@ -106,3 +106,25 @@ span.bar-4 {
   background-size: cover;
   background-position: 0 0;
 }
+
+/* project item shadow */
+.project-shadow {
+  -webkit-box-shadow: 1px -10px 195px -17px rgba(18, 247, 214, 0.7);
+  -moz-box-shadow: 1px -10px 195px -17px rgba(18, 247, 214, 0.7);
+  box-shadow: 1px -10px 195px -17px rgba(18, 247, 214, 0.7);
+}
+/* .project-shadow {
+  -webkit-box-shadow: 1px -10px 300px 20px rgba(18, 247, 214, 1);
+  -moz-box-shadow: 1px -10px 300px 20px rgba(18, 247, 214, 1);
+  box-shadow: 1px -10px 300px 20px rgba(18, 247, 214, 1);
+} */
+/* .project-shadow {
+  -webkit-box-shadow: -5px 23px 300px 26px rgba(18, 247, 214, 1);
+  -moz-box-shadow: -5px 23px 300px 26px rgba(18, 247, 214, 1);
+  box-shadow: -5px 23px 300px 26px rgba(18, 247, 214, 1);
+} */
+/* .project-shadow {
+  -webkit-box-shadow: -5px 23px 300px 106px rgba(18, 247, 214, 1);
+  -moz-box-shadow: -5px 23px 300px 106px rgba(18, 247, 214, 1);
+  box-shadow: -5px 23px 300px 106px rgba(18, 247, 214, 1);
+} */

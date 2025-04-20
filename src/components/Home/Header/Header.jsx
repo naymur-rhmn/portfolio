@@ -3,11 +3,11 @@ import { Link } from "react-scroll";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
-  const [menuToggle, setMenuToggle] = useState(0);
+  // const [menuToggle, setMenuToggle] = useState(0);
 
-  const handleMenuToggle = (index) => {
-    setMenuToggle(index);
-  };
+  // const handleMenuToggle = (index) => {
+  //   setMenuToggle(index);
+  // };
 
   const handleClick = () => {
     setToggle((prev) => !prev);
@@ -18,13 +18,7 @@ const Header = () => {
         <div className="max-w-screen-2xl mx-auto  z-50 h-[68px] md:h-[78px]  px-4 md:px-8 text-white ">
           <div className="flex items-center justify-between h-full gap-[5rem]">
             {/* logo */}
-            <Link
-              to="home"
-              smooth={true}
-              offset={-77}
-              duration={500}
-              onClick={() => handleMenuToggle(0)}
-            >
+            <Link to="home" smooth={true} offset={-77} duration={500}>
               <div className="z-50 cursor-pointer">
                 <span className="font-ibm text-[26px] text-brand1">naymur</span>
               </div>
@@ -35,63 +29,65 @@ const Header = () => {
               <ul className="flex gap-6">
                 <Link
                   to="home"
-                  activeClass="menu-active"
+                  spy={true}
+                  hashSpy={false}
                   smooth={true}
                   offset={-77}
                   duration={500}
-                  className={`hover-underline-animation ${
-                    menuToggle === 0 ? "menu-active" : ""
-                  }`}
-                  onClick={() => handleMenuToggle(0)}
+                  activeClass="menu-active"
+                  className={`hover-underline-animation`}
                 >
                   Home
                 </Link>
 
                 <Link
-                  to="projects"
-                  smooth={true}
-                  offset={-69}
-                  duration={500}
-                  className={`hover-underline-animation ${
-                    menuToggle === 2 ? "menu-active" : ""
-                  }`}
-                  onClick={() => handleMenuToggle(2)}
-                >
-                  Projects
-                </Link>
-                <Link
                   to="about"
+                  spy={true}
+                  hashSpy={false}
                   smooth={true}
                   offset={-75}
                   duration={500}
-                  className={`hover-underline-animation ${
-                    menuToggle === 1 ? "menu-active" : ""
-                  }`}
-                  onClick={() => handleMenuToggle(1)}
+                  activeClass="menu-active"
+                  className={`hover-underline-animation `}
                 >
                   About Me
                 </Link>
+
+                <Link
+                  to="projects"
+                  spy={true}
+                  hashSpy={false}
+                  smooth={true}
+                  offset={-69}
+                  duration={500}
+                  activeClass="menu-active"
+                  className={`hover-underline-animation `}
+                >
+                  Projects
+                </Link>
+
                 <Link
                   to="blogs"
+                  spy={true}
+                  hashSpy={false}
                   smooth={true}
                   offset={-60}
                   duration={500}
-                  className={`hover-underline-animation ${
-                    menuToggle === 3 ? "menu-active" : ""
-                  }`}
-                  onClick={() => handleMenuToggle(3)}
+                  activeClass="menu-active"
+                  className={`hover-underline-animation`}
                 >
                   Blogs
                 </Link>
+
                 <Link
                   to="contact"
+                  spy={true}
+                  hashSpy={false}
                   smooth={true}
                   offset={-30}
                   duration={500}
-                  className={`hover-underline-animation ${
-                    menuToggle === 4 ? "menu-active" : ""
-                  }`}
-                  onClick={() => handleMenuToggle(4)}
+                  activeClass="menu-active"
+                  className={`hover-underline-animation `}
                 >
                   Contact
                 </Link>
@@ -130,10 +126,10 @@ const Header = () => {
           <nav className="">
             <ul className=" text-xl text-center pr-4">
               <Link
-                to="hero"
+                to="home"
                 spy={true}
                 smooth={true}
-                hashSpy={true}
+                hashSpy={false}
                 offset={-77}
                 duration={500}
                 onClick={handleClick}
@@ -148,7 +144,7 @@ const Header = () => {
                 to="about"
                 spy={true}
                 smooth={true}
-                hashSpy={true}
+                hashSpy={false}
                 offset={-70}
                 duration={500}
                 onClick={handleClick}
@@ -162,7 +158,7 @@ const Header = () => {
                 to="projects"
                 spy={true}
                 smooth={true}
-                hashSpy={true}
+                hashSpy={false}
                 offset={-60}
                 duration={500}
                 onClick={handleClick}
@@ -171,7 +167,9 @@ const Header = () => {
               </Link>
               <Link
                 to="blogs"
+                spy={true}
                 smooth={true}
+                hashSpy={false}
                 offset={-40}
                 duration={500}
                 onClick={handleClick}
@@ -184,7 +182,7 @@ const Header = () => {
                 to="contact"
                 spy={true}
                 smooth={true}
-                hashSpy={true}
+                hashSpy={false}
                 offset={-60}
                 duration={500}
                 onClick={handleClick}

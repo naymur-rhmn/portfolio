@@ -1,5 +1,6 @@
 import React from "react";
 import { IoLogoLinkedin, IoLogoGithub, IoLogoFacebook } from "react-icons/io5";
+import { IoLogoWhatsapp } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -14,15 +15,6 @@ const Footer = () => {
             <li>
               <a
                 className="group"
-                href="https://github.com/naymur-rhmn"
-                target="_blank"
-              >
-                <IoLogoGithub className="group-hover:text-brand1" size={18} />
-              </a>
-            </li>
-            <li>
-              <a
-                className="group"
                 href="https://www.linkedin.com/in/naymur-mn"
                 target="_blank"
               >
@@ -32,10 +24,30 @@ const Footer = () => {
             <li>
               <a
                 className="group"
+                href="https://github.com/naymur-rhmn"
+                target="_blank"
+              >
+                <IoLogoGithub className="group-hover:text-brand1" size={19} />
+              </a>
+            </li>
+
+            <li>
+              <a
+                className="group"
                 href="https://www.facebook.com/naymurmn"
                 target="_blank"
               >
-                <IoLogoFacebook className="group-hover:text-brand1" size={18} />
+                <IoLogoFacebook className="group-hover:text-brand1" size={20} />
+              </a>
+            </li>
+            <li>
+              <a
+                className="group"
+                href="https://wa.me/8801762750191"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IoLogoWhatsapp className="group-hover:text-brand1" size={20} />
               </a>
             </li>
           </ul>

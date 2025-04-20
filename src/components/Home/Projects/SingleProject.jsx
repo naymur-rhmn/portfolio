@@ -1,9 +1,17 @@
 import { LuExternalLink } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa6";
-import { motion, useTransform, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion, useTransform } from "framer-motion";
+import { useEffect } from "react";
 
-const SingleProject = ({ project, index, range, targetScale, progress }) => {
+const SingleProject = ({
+  project,
+  index,
+  range,
+  targetScale,
+  progress,
+  activeId,
+  setActiveId,
+}) => {
   const {
     name,
     title,
@@ -15,43 +23,83 @@ const SingleProject = ({ project, index, range, targetScale, progress }) => {
     gitLink,
     id,
   } = project;
+
   const scale = useTransform(progress, range, [1, targetScale]);
+  let isActive = activeId === id;
 
-  const bgColor = [1, 2, 3].includes(id)
-    ? "bg-gray-700"
-    : [4, 5, 6].includes(id)
-    ? "bg-gray-800"
-    : [7, 8, 9].includes(id)
-    ? "bg-gray-900"
-    : [10, 11, 12].includes(id)
-    ? "bg-gray-700"
-    : [13, 14, 15].includes(id)
-    ? "bg-gray-800"
-    : "bg-gray-700";
+  // Click handler to set active project
+  const handleClick = () => {
+    setActiveId(id);
+  };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setActiveId(null); // Reset active state when scrolling
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [setActiveId]);
+
+  const bgColor =
+    id == 1
+      ? "bg-[#374351]"
+      : id == 2
+      ? "bg-[#2b3641]"
+      : id == 3
+      ? "bg-[#2a3642]"
+      : id == 4
+      ? "bg-[#27333e]"
+      : id == 5
+      ? "bg-[#26323e]"
+      : id == 6
+      ? "bg-[#24303c]"
+      : id == 7
+      ? "bg-[#222e3a]"
+      : id == 8
+      ? "bg-[#1e2a36]"
+      : id == 9
+      ? "bg-[#171f32]"
+      : id == 10
+      ? "bg-[#141d30]"
+      : "bg-[#141d30]";
+
+  // 303d5a
+  // 2a3651
+  // 232e47
+  // 1d273e
+  // 171f32
+  // 141d30
   return (
     <motion.div
       style={{
         scale: scale,
-        // transform: `translateY(${120 + index * 30}px)`,
         transformOrigin: "top",
-        top: `calc(120px + ${index * 30}px)`,
+        top: `calc(120px + ${index * 32}px)`,
+        zIndex: isActive ? 20 : 10,
       }}
-      className="sticky"
+      className={`sticky transition-all duration-300 rounded-md ${
+        isActive ? "z-20 project-shadow" : "z-10"
+      }`}
+      onClick={() => handleClick(id)}
     >
       <div
-        className={`group relative grid items-center grid-cols-12  min-h-[380px] rounded-md shadow-md hover:shadow-2xl ${bgColor} `}
+        className={`group relative grid  grid-cols-12  min-h-[380px] rounded-md shadow-md hover:shadow-2xl ${bgColor} `}
       >
-        <div className={`lg:col-span-5 col-span-12 p-5`}>
+        <div
+          className={`lg:col-span-5 col-span-12 pb-5 pt-3 px-5 border-t border-gray-600 rounded-l-md`}
+        >
           <a
             className="group-hover:text-brand1 inline-block"
             href={webLink}
             target="_blank"
           >
-            <h3 className="text-2xl lg:text-3xl font-semibold">{name}</h3>
+            <h3 className="text-2xl  font-semibold">{name}</h3>
           </a>
           <p className="text-lg lg:text-xl text-gray-200 mt-1">{title}</p>
-          <ul className="flex gap-2 flex-wrap mt-3">
+          <ul className="flex gap-2 flex-wrap mt-14">
             {technology?.map((skill, index) => {
               return (
                 <li
@@ -66,7 +114,7 @@ const SingleProject = ({ project, index, range, targetScale, progress }) => {
           {/* external link buttons */}
           <div className="flex gap-3">
             <a href={webLink} target="_blank">
-              <button className="group/btn py-3 px-5 text-sm font-medium text-white mt-6 bg-[#26303F] rounded hover:bg-opacity-80 flex items-center gap-2">
+              <button className="group/btn py-3 px-5 text-sm font-medium text-white mt-6 bg-[#1c242e]  bg-opacity-85 border border-gray-600 hover:border-gray-700 rounded hover:bg-opacity-80 flex items-center gap-2">
                 <span>Web Link</span>
                 <LuExternalLink
                   className="group-hover/btn:text-brand1"
@@ -75,22 +123,23 @@ const SingleProject = ({ project, index, range, targetScale, progress }) => {
               </button>
             </a>
             <a href={gitLink} target="_blank">
-              <button className=" group/btn py-3 px-5 text-sm font-medium text-white mt-6 bg-[#26303F] rounded hover:bg-opacity-80  flex items-center gap-2">
+              <button className=" group/btn py-3 px-5 text-sm font-medium text-white mt-6 bg-[#1c242f] bg-opacity-85 border border-gray-600 hover:border-gray-700 transition-all rounded hover:bg-opacity-80  flex items-center gap-2">
                 <span>Github link</span>
                 <FaGithub className="group-hover/btn:text-brand1" size={16} />
               </button>
             </a>
           </div>
         </div>
+
         {/* project banner */}
         <div className="lg:col-span-7 col-span-12 rounded-r-md bg-gray-500 relative ">
-          <div className="h-[380px] overflow-hidden">
+          <div className="h-[380px] overflow-hidden rounded-r-md">
             <div
               style={{ backgroundImage: `url(${img})` }}
-              className="demo-img-bg lg:rounded-r-md bg-[#353d47d8]"
+              className="demo-img-bg rounded-r-md bg-[#213e62d8]"
             ></div>
           </div>
-          <div className="absolute h-full w-full bg-gray-500 top-0 left-0 opacity-0 bg-opacity-85 backdrop-blur-lg scale-50  transition-all z-10 group-hover:opacity-100 group-hover:scale-100 p-10 flex justify-center items-center overflow-hidden rounded-r-md">
+          <div className="absolute h-full w-[100.5%] bg-gray-500 top-0 -right-[1px] opacity-0 bg-opacity-85 backdrop-blur-lg scale-50  transition-all z-10 group-hover:opacity-100 group-hover:scale-100 p-10 flex justify-center items-center overflow-hidden rounded-r-md">
             <p>{details}</p>
           </div>
         </div>
